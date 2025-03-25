@@ -2,7 +2,8 @@ name: Update Databricks Repo on PR Merge to Master
 
 on:
   push:
-    # Trigger on a merge to the master branch (this is for when a PR is merged)
+    branches:
+      - master
 
 jobs:
   update-repo:
