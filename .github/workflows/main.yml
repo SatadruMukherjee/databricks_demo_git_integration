@@ -23,17 +23,14 @@ jobs:
         pip install requests
     
     - name: Run Databricks Repo Update Script
-      env:
-        DATABRICKS_URL: ${{ secrets.DATABRICKS_URL }}  # Store sensitive values in GitHub Secrets
-        DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
       run: |
         python -c "
         import requests
         import json
         
         # Set your Databricks workspace URL and the personal access token
-        DATABRICKS_URL = '${{ secrets.DATABRICKS_URL }}'
-        TOKEN = '${{ secrets.DATABRICKS_TOKEN }}'
+        DATABRICKS_URL = 'https://dbc-bb6de55e-3c2e.cloud.databricks.com'
+        TOKEN = 'dapi8f38f599993500ff3937e0df166ff112'
         
         # Define the repo_id you want to update
         repo_id = 1856876576644350  # Replace with your repo ID
@@ -42,7 +39,7 @@ jobs:
         new_branch_or_tag = 'main'
         
         # Set up the API endpoint
-        endpoint = f'{DATABRICKS_URL}/api/2.0/repos/{repo_id}'
+        endpoint = f'{DATABRICKS_URL}/api/2.0/repos/1856876576644350'
         
         # Prepare the payload with the new branch or tag
         payload = {
