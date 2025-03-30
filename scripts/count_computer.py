@@ -1,4 +1,6 @@
 from time import sleep
+import sys
+print(sys.argv)
 print("Test Job Parameter")
 table_name=dbutils.widgets.get("table_name")
 print("The input table name : ",table_name)
