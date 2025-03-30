@@ -1,6 +1,7 @@
 from time import sleep
 import sys
 print(sys.argv)
+print("Changes made")
 print("Test Job Parameter")
 table_name=sys.argv[1]
 print("The input table name : ",table_name)
