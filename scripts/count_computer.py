@@ -2,7 +2,7 @@ from time import sleep
 import sys
 print(sys.argv)
 print("Test Job Parameter")
-table_name=dbutils.widgets.get("table_name")
+table_name=sys.argv[1]
 print("The input table name : ",table_name)
 query = f"SELECT COUNT(1) as count FROM {table_name}"
 df = spark.sql(query)
